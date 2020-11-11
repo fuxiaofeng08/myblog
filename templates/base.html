@@ -1,0 +1,51 @@
+<!-- base.html -->
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+</head>
+<body>
+<div class="container-fluid">
+    {% include 'header.html' %}
+    <div class="row">
+        <div class="col-sm-4 col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3> MENU</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="list-group">
+                        <div class="list-group-item"><a href="/" >HOME</a></div>
+                        <div class="list-group-item">时事新闻</div>
+                        <div class="list-group-item">电视新闻</div>
+                    </div>
+                     <a href="https://info.flagcounter.com/MiIP"><img src="https://s01.flagcounter.com/count/MiIP/bg_FFFFFF/txt_000000/border_CCCCCC/columns_1/maxflags_4/viewers_3/labels_1/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8 col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    {% block headmessage %} {% endblock %}
+                </div>
+                <div class="panel-body">
+                    {% block content %} {% endblock %}
+                </div>
+                <div class="panel-footer">
+                    {% include 'footer.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
